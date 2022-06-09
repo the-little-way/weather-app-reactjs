@@ -2,11 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Results from 'results.js';
+import NotFound from '404.js';
+import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom'  
 //import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+
+      <Switch>
+        <Route exact path="/">
+          <App />
+        </Route>
+      </Switch>
+
+      <Switch>
+        <Route path="/results">
+          <Results />
+        </Route>
+      </Switch>
+
+      <Switch>
+        <Route path="*">
+          <404.js />
+        </Route>
+      </Switch>
+
+    </Router>  
   </React.StrictMode>,
   document.getElementById('root')
 );
