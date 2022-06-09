@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Results from 'results.js';
-import NotFound from '404.js';
+import Results from './results.js';
+import NotFound from './404.js';
 import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom'  
 //import reportWebVitals from './reportWebVitals';
 
