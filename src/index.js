@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import Results from './results.js';
 import NotFound from './404.js';
-import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom'  
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -25,7 +25,7 @@ ReactDOM.render(
 
       <Switch>
         <Route path="*">
-          <404.js />
+          <NotFound />
         </Route>
       </Switch>
 

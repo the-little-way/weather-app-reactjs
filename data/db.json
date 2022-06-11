@@ -1,0 +1,12 @@
+// Using this file to simulate a response from api call
+{
+
+"tempData" : {
+    "cityName" : "Lisbon",
+    "val" : 10,
+    "desc" : "Clear skies",
+    "daily" : [15, 10, 15, 20, 22, 20, 18],
+    "hourly" : [15, 17, 13, 10, 5]
+  }
+  
+}

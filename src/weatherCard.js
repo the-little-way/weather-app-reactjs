@@ -1,13 +1,5 @@
 import {useState} from 'react';
 
-// this data would be sent from the backend to the /search route, then passed to this component via props
-//let tempData = {
-//		cityName : "Lisbon",
-//		val : 10,
-//		desc : "Clear skies",
-//		daily: [],
-//		hourly: []
-//	};
 
 function WeatherCard(props){
 	

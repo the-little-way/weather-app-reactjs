@@ -4,10 +4,11 @@ function SearchBar() {
 
   //let data = null;
 
-  let handleSubmit(){
-    fetch()
-    .then()
-    .then()
+  let handleSubmit = function(){
+    console.log("fetching data..")
+    // fetch('')
+    // .then()
+    // .then()
   };
 
   return (

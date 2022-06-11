@@ -91,3 +91,44 @@ code {
   margin: 0;
   color: gray;
 }
+
+.btn {
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 6px 12px;
+  margin-bottom: 0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.results-section {
+  
+}
+
+.daily-card {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.mini-group {
+  background-color: aliceblue;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+}
+
+.daily-mini {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+  margin: 0 5px;
+}
