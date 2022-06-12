@@ -16,7 +16,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 //    hourly: [15, 17, 13, 10, 5]
 //  };
 
-function Results() {
+function Results(props) {
   return (
     <div className="App-header">     
       
