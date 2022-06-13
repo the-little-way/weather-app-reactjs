@@ -4,8 +4,11 @@ import {useState, useEffect} from 'react';
 function HourlyForecast(props){
 	
 	// simulated data; tempData.hourly = [15, 17, 13, 10, 5]
+	//let data = props;
+	//console.log(data)
 	let hourlyData = props.tempData.hourly;
-
+	//console.log(hourlyData, "hourly")
+	
 	return(
 		<div className="hourly-card">
 
@@ -16,10 +19,12 @@ function HourlyForecast(props){
 			<div className="mini-group">
 				{
 					hourlyData.map( (hourlyData)=>{
-						<div className="daily-mini">
-							<h5>{hourlyData} °C</h5>
-						</div>
-				})
+						return(
+							<div className="daily-mini">
+								<h5>{hourlyData} °C</h5>
+							</div>
+						)
+					})
 				}
 			</div>
 

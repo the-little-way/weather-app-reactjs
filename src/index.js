@@ -1,11 +1,40 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Results from './results.js';
 import NotFound from './404.js';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Link, BrowserRouter as Router, Route, Switch, useHistory, Redirect} from 'react-router-dom';
 //import reportWebVitals from './reportWebVitals';
+
+
+
+ function loadWeather(arg){
+
+    let cityName = arg;
+
+    console.log("fetching data..")
+
+    return new Promise(
+      resolve=>{
+
+
+    fetch('http://localhost:8000/tempData') //real api call would concat params into url eg. `url + ${cityName}`
+    .then(res=>{
+      return res.json();
+    })
+    .then(data =>{
+      //setTempData(data);
+      console.log(data, cityName);
+      //tempData = data;
+      resolve(data)
+      
+    })
+      }
+    )
+
+  };
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,17 +42,13 @@ ReactDOM.render(
 
       <Switch>
         <Route exact path="/">
-          <App />
+          <App loadWeather={loadWeather}/>
         </Route>
-      </Switch>
 
-      <Switch>
         <Route path="/results">
           <Results />
         </Route>
-      </Switch>
 
-      <Switch>
         <Route path="*">
           <NotFound />
         </Route>

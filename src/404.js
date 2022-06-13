@@ -7,7 +7,7 @@ function NotFound(){
 				<h1 style={{fontSize: "10rem", fontWeight: "700", color: "grey"}}>Oops!</h1>
 				<small>404 Error</small>
 				<p>Sorry, page not found.</p>
-				<Link to="/" role="button" className="btn btn-primary">Click here to go back</Link>
+				<Link to="/" role="button" className="btn btn-primary link">Click here to go back</Link>
 			</div>
 		</section>
 	)

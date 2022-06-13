@@ -1,35 +1,28 @@
-import Results from './results.js';
 import {useState, useEffect} from 'react';
-import React from 'react'
-import { BrowserRouter as Router, Route, useHistory, Redirect} from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter as Router, Route, useHistory, Redirect, withRouter} from 'react-router-dom';
 
 
+function SearchBar(props) {
 
-function SearchBar() {
+  let history = useHistory();
 
-  let [cityName, setCityName] = useState(null);
+  let loadWeather = props.loadWeather;
+  
+  let [cityName, setCityName] = useState("");
 
-  let [Temps, setTemps] = useState(null);
-
-
-
-  let handleSubmit = (e) => {
-
+  async function handleSubmit(e){
     e.preventDefault(); //prevent page reload by form
+    
+    let x = await loadWeather(cityName)
+    if(x){
+      console.log('done');
+      history.push({pathname : '/results', state: { tempData : x} });
+    }
 
-    console.log("fetching data..")
-
-    fetch('http://localhost:8000/tempData') //real api call would concat params into url eg. `url + ${cityName}`
-    .then(res=>{
-      return res.json();
-    })
-    .then(data =>{
-      setTemps(data);
-      console.log(data);
-
-    })
-  };
-
+    //const {router} = e.target.props
+    //router.push('/results')
+  }
 
 
   return (
@@ -42,4 +35,5 @@ function SearchBar() {
   )
 }
 
-export default SearchBar;
+
+export  default withRouter(SearchBar);

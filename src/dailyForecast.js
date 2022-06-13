@@ -16,9 +16,11 @@ function DailyForecast(props){
 			<div className="mini-group">
 				{
 					dailyData.map( (dailyData)=>{
-						<div className="daily-mini">
-							<h5>{dailyData} °C</h5>
-						</div>
+						return(
+							<div className="daily-mini">
+								<h5>{dailyData} °C</h5>
+							</div>
+						)
 				})
 				}
 			</div>

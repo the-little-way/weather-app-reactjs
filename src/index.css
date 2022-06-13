@@ -119,7 +119,7 @@ code {
 }
 
 .mini-group {
-  background-color: aliceblue;
+  background-color: #8e8e8e;
   border-radius: 15px;
   display: flex;
   flex-direction: row;
@@ -131,4 +131,15 @@ code {
   border-radius: 4px;
   color: white;
   margin: 0 5px;
+}
+
+.daily-card h5, .hourly-card h5 {
+  margin: 25px 0 5px;
+  font-size: large;
+  padding: 5px;
+}
+
+.link {
+  text-decoration: none;
+  margin-top: 25px;
 }

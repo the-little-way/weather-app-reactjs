@@ -1,9 +1,10 @@
 import ShowDate from './showDate.js';
+import SearchBar from './searchBar.js';
 import WeatherCard from './weatherCard.js';
 import HourlyForecast from './hourlyForecast.js';
 import DailyForecast from './dailyForecast.js';
 import './App.css';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, withRouter, BrowserRouter as Router } from 'react-router-dom';
 
 
 // use npx json-server --watch data/db.json --port 8000
@@ -17,23 +18,26 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 //  };
 
 function Results(props) {
+  console.log(props, "here");
+  let tempData = props.location.state.tempData;
+
   return (
     <div className="App-header">     
       
       <ShowDate />
       
       <div className="results-section">
-        <WeatherCard />
+        <WeatherCard tempData={tempData}/>
         <div className="mini-section">
-          <HourlyForecast />
-          <DailyForecast />
+          <HourlyForecast tempData={tempData}/>
+          <DailyForecast tempData={tempData}/>
         </div>
       </div>
       
-      <Link to="/" role="button" className="btn btn-primary">Click here to go back</Link>
+      <Link to="/" role="button" className="btn btn-primary link">Click here to go back</Link>
 
     </div>
   );
 }
 
-export default Results;
+export default withRouter(Results);
